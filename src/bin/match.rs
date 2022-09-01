@@ -6,4 +6,9 @@ fn main() {
         "Alex" => println!("Hello Alex"),
         _ => println!("nice to meet you!")
     }
+    let my_bool = false;
+    match my_bool {
+        true => println!("it's true"),
+        false => println!("it's false"),
+    }
 }
