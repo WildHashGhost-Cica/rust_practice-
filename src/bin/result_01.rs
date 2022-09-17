@@ -1,0 +1,33 @@
+#[derive(Debug)]
+enum MenuChoice {
+    MainMenu,
+    Start,
+    Quit
+}
+fn get_choice(input: &str) -> Result<MenuChoice, String>{
+    match input {
+        "mainmenu" => Ok(MenuChoice::MainMenu),
+        "start" => Ok(MenuChoice::Start),
+        "quit" => Ok(MenuChoice::Quit),
+        _=>Err("menu choice not found".to_owned()),
+    }
+}
+fn print_choice(choice: &MenuChoice) {
+    println!("choice = {:?}", choice);
+}
+fn pick_choice(input: &str) -> Result<(), String>{
+    let choice =  get_choice(input)?;
+    print_choice(&choice);
+    Ok(())
+}
+fn main(){
+    pick_choice("start");
+    /*let choice: Result<MenuChoice, _> =  get_choice("leave");
+    
+    match choice {
+        Ok(choice) => print_choice(&choice),
+        Err(e) => println!("error ={:?}",e),
+    }
+    */
+    //println!("choice = {:?}",choice);
+}
