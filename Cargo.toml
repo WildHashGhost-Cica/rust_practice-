@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 humantime = "2.0.1"
+chrono = "0.4.22"
